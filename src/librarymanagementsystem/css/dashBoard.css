@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 13, 2018, 6:34:53 AM
+    Author     : Bright
+*/
+
+
+.default-color0.chart-series-line {
+    -fx-stroke: #2b579a; 
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #2b579a, #2b579a;
+}
+.default-color0.chart-series-area-line { -fx-stroke: #2b579a; }
+.default-color0.chart-area-symbol { -fx-background-color: #2b579a, #2b579a; }
+#close:hover{
+    -fx-background-color:#F44336;
+}
+
+#fullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/fullscreen-hover.png');
+}
+
+#unfullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/unfullscreen-hover.png');
+}
+
+#minimise:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/minimize-hover.png');
+}

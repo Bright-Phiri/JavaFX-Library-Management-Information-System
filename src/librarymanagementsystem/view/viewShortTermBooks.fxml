@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="521.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.viewShortTermBooksController">
+   <center>
+      <TableView fx:id="issuedTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="Issued ID" />
+          <TableColumn fx:id="isbnCol" prefWidth="75.0" text="Book ISBN" />
+            <TableColumn fx:id="titleCol" prefWidth="75.0" text="Book Title" />
+            <TableColumn fx:id="studentIdCol" prefWidth="75.0" text="Student ID" />
+            <TableColumn fx:id="nameCol" prefWidth="75.0" text="Student Name" />
+            <TableColumn fx:id="issuedTimeCol" prefWidth="75.0" text="Issued Time" />
+            <TableColumn fx:id="returnTimeCol" prefWidth="75.0" text="Return Time" />
+            <TableColumn fx:id="hoursCol" prefWidth="75.0" text="Number of Hours" />
+            <TableColumn fx:id="feeCol" prefWidth="75.0" text="Late Fee (MWK)" />
+        </columns>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+</BorderPane>

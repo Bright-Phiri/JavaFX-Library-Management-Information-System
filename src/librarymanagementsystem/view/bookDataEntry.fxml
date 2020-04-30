@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pane1" prefHeight="519.0" prefWidth="993.0" style="-fx-background-color: white;" stylesheets="@../css/bookData.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.booktDataEntryController">
+   <center>
+      <VBox prefHeight="519.0" prefWidth="993.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="993.0">
+               <children>
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#back" prefHeight="40.0" prefWidth="40.0" ripplerFill="WHITE" style="-fx-background-color: white; -fx-background-radius: 20000; -fx-border-color: black; -fx-border-radius: 20000;">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="ARROW_LEFT" size="16" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="20.0" prefHeight="17.0" prefWidth="957.0">
+               <children>
+                  <Label text="Book ISBN :">
+                     <HBox.margin>
+                        <Insets left="110.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookId" prefHeight="25.0" prefWidth="351.0" promptText="ISBN" style="-fx-background-radius: 0;">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="957.0">
+               <children>
+                  <Label text="Book Title :">
+                     <HBox.margin>
+                        <Insets left="113.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookname" prefHeight="25.0" prefWidth="351.0" promptText="Title" style="-fx-background-radius: 0;">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="150.0" prefHeight="17.0" prefWidth="957.0">
+               <children>
+                  <Label text="Book Author :">
+                     <HBox.margin>
+                        <Insets left="97.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookAuthor" prefHeight="25.0" prefWidth="351.0" promptText="Author" style="-fx-background-radius: 0;">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="200.0" prefHeight="17.0" prefWidth="957.0">
+               <children>
+                  <Label text="Book Publisher :">
+                     <HBox.margin>
+                        <Insets left="84.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookPublusher" prefHeight="25.0" prefWidth="351.0" promptText="Publisher" style="-fx-background-radius: 0;">
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="225.0" prefHeight="17.0" prefWidth="957.0">
+               <children>
+                  <Label text="Edition :">
+                     <HBox.margin>
+                        <Insets left="132.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="edition" prefHeight="25.0" prefWidth="351.0" promptText="Edition" style="-fx-background-radius: 0;">
+                     <HBox.margin>
+                        <Insets left="9.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="175.0" prefHeight="17.0" prefWidth="957.0">
+               <children>
+                  <Label text="Quantity :">
+                     <HBox.margin>
+                        <Insets left="122.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="quantity" prefHeight="25.0" prefWidth="351.0" promptText="Quantity" style="-fx-background-radius: 0;">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="286.0" prefHeight="17.0" prefWidth="957.0">
+               <children>
+                  <Label text="Book Section :">
+                     <HBox.margin>
+                        <Insets left="95.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="bookSection" prefHeight="25.0" prefWidth="351.0" promptText="Select Book Section" style="-fx-background-color: white; -fx-background-radius: 0; -fx-border-color: #CACACA;">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="396.0" prefHeight="17.0" prefWidth="957.0" spacing="10.0">
+               <children>
+                  <JFXButton fx:id="cancel" layoutX="450.0" layoutY="10.0" onAction="#cancelSaveBookOperation" prefHeight="25.0" prefWidth="103.0" style="-fx-background-radius: 0;" text="Cancel">
+                     <HBox.margin>
+                        <Insets left="326.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="12.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="save" onAction="#saveBook" prefHeight="25.0" prefWidth="103.0" style="-fx-background-radius: 0;" text="Save">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

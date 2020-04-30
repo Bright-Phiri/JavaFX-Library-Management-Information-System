@@ -1,0 +1,16 @@
+
+.text-field{
+    -fx-background-radius :0;
+    -font-size:16pt;
+}
+
+.label{
+    -fx-text-fill:white;
+}
+
+.jfx-button{
+    -fx-background-color:#2b579a;
+    -fx-border-color:#f4f4f4;
+    -fx-border-width: 2;
+    -fx-text-fill:white;
+}

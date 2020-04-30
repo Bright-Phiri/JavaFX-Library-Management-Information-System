@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="520.0" prefWidth="692.0" stylesheets="@../css/changeFee.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.changeFeePerDayController">
+   <center>
+      <VBox prefHeight="520.0" prefWidth="649.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Late fee per day">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets left="4.0" top="4.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin>
+            </Label>
+            <Label layoutX="35.0" layoutY="60.0" text="Change late fee per day">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets left="4.0" top="4.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="25.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="currentFee" editable="false" maxWidth="500.0" prefHeight="29.0" prefWidth="500.0" promptText="Current Fee" style="-fx-background-radius: 0;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" right="119.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="newFee" layoutX="40.0" layoutY="144.0" maxWidth="500.0" prefHeight="29.0" prefWidth="500.0" promptText="New Fee" style="-fx-background-radius: 0;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" right="119.0" top="15.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="649.0" spacing="20.0">
+               <children>
+                  <JFXButton fx:id="cancel" layoutX="10.0" layoutY="10.0" maxWidth="240.0" onAction="#cancel" prefHeight="25.0" prefWidth="240.0" style="-fx-background-radius: 0;" text="Cancel">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin></JFXButton>
+                  <JFXButton fx:id="update" maxWidth="240.0" onAction="#changeFeePerDay" prefHeight="25.0" prefWidth="240.0" style="-fx-background-radius: 0;" text="Save">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

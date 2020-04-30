@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.exportDataAdminController">
+   <top>
+      <VBox prefHeight="123.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="67.0" prefWidth="957.0">
+               <right>
+                  <HBox alignment="TOP_RIGHT" prefHeight="37.0" prefWidth="127.0" style="-fx-background-color: white;" stylesheets="@../css/settings.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="minimise" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#minimize" />
+                        <Label fx:id="fullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#fullscreen" />
+                        <Label fx:id="unfullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#unfullscreen" />
+                        <Label fx:id="close" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#close" />
+                     </children>
+                  </HBox>
+               </right>
+               <center>
+                  <Label text="Library Management System" textFill="#a1a1a1" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="23.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets top="2.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </center>
+            </BorderPane>
+            <VBox prefHeight="117.0" prefWidth="953.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox prefHeight="81.0" prefWidth="957.0" spacing="10.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label prefHeight="73.0" prefWidth="288.0" style="-fx-text-fill: #2b579a;" text="Export">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="46.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="35.0" prefWidth="957.0" style="-fx-background-color: #efefef;" />
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox prefHeight="528.0" prefWidth="261.0" stylesheets="@../css/settings.css" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="reportType" prefHeight="31.0" prefWidth="266.0" promptText="Select report" style="-fx-font-size: 13; -fx-background-radius: 0; -fx-background-color: white; -fx-border-color: black;">
+               <VBox.margin>
+                  <Insets left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </ComboBox>
+            <JFXButton onAction="#loadPDFExportPanel" prefHeight="60.0" prefWidth="261.0" style="-fx-background-radius: 0;" text="Create PDF Document">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="FILE_PDF_ALT" size="20" />
+               </graphic>
+               <padding>
+                  <Insets right="16.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="2.0" right="-1.0" top="2.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton layoutX="10.0" layoutY="10.0" onAction="#loadPDFExceltPanel" prefHeight="60.0" prefWidth="261.0" style="-fx-background-radius: 0;" text="Create Excel Document">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="FILE_EXCEL_ALT" size="20" />
+               </graphic>
+               <padding>
+                  <Insets right="9.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="2.0" right="-1.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton layoutX="10.0" layoutY="75.0" onAction="#loadWordExportPanel" prefHeight="60.0" prefWidth="261.0" style="-fx-background-radius: 0;" text="Create Word  Document">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="FILE_WORD_ALT" size="20" />
+               </graphic>
+               <VBox.margin>
+                  <Insets left="2.0" right="-1.0" />
+               </VBox.margin>
+            </JFXButton>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <BorderPane prefHeight="521.0" prefWidth="739.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

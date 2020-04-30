@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/issuebook.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.issueBookController">
+   <top>
+      <VBox prefHeight="123.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="67.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <right>
+                  <HBox alignment="TOP_RIGHT" prefHeight="37.0" prefWidth="127.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="minimise" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#minimize" />
+                        <Label fx:id="fullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#fullscreen" />
+                        <Label fx:id="unfullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#unfullscreen" />
+                        <Label fx:id="close" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#close" />
+                     </children>
+                  </HBox>
+               </right>
+               <center>
+                  <Label text="Library Management System" textFill="#a1a1a1" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="23.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets top="2.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </center>
+            </BorderPane>
+            <VBox prefHeight="117.0" prefWidth="1000.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox prefHeight="81.0" prefWidth="953.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="73.0" prefWidth="255.0" style="-fx-text-fill: #2b579a;" text="Issue Book">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="46.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <Region prefHeight="81.0" prefWidth="129.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="35.0" prefWidth="1000.0" style="-fx-background-color: #efefefef;" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="38.0" prefWidth="957.0" spacing="5.0" style="-fx-border-color: #C5CAE9; -fx-background-color: EEEEEE;">
+               <children>
+                  <SVGPath content="M25.754,4.626c-0.233-0.161-0.536-0.198-0.802-0.097L12.16,9.409c-0.557,0.213-1.253,0.316-1.968,0.316c-0.997,0.002-2.029-0.202-2.747-0.48C7.188,9.148,6.972,9.04,6.821,8.943c0.056-0.024,0.12-0.05,0.193-0.075L18.648,4.43l1.733,0.654V3.172c0-0.284-0.14-0.554-0.374-0.714c-0.233-0.161-0.538-0.198-0.802-0.097L6.414,7.241c-0.395,0.142-0.732,0.312-1.02,0.564C5.111,8.049,4.868,8.45,4.872,8.896c0,0.012,0.004,0.031,0.004,0.031v17.186c0,0.008-0.003,0.015-0.003,0.021c0,0.006,0.003,0.01,0.003,0.016v0.017h0.002c0.028,0.601,0.371,0.983,0.699,1.255c1.034,0.803,2.769,1.252,4.614,1.274c0.874,0,1.761-0.116,2.583-0.427l12.796-4.881c0.337-0.128,0.558-0.448,0.558-0.809V5.341C26.128,5.057,25.988,4.787,25.754,4.626zM5.672,11.736c0.035,0.086,0.064,0.176,0.069,0.273l0.004,0.054c0.016,0.264,0.13,0.406,0.363,0.611c0.783,0.626,2.382,1.08,4.083,1.093c0.669,0,1.326-0.083,1.931-0.264v1.791c-0.647,0.143-1.301,0.206-1.942,0.206c-1.674-0.026-3.266-0.353-4.509-1.053V11.736zM10.181,24.588c-1.674-0.028-3.266-0.354-4.508-1.055v-2.712c0.035,0.086,0.065,0.176,0.07,0.275l0.002,0.053c0.018,0.267,0.13,0.408,0.364,0.613c0.783,0.625,2.381,1.079,4.083,1.091c0.67,0,1.327-0.082,1.932-0.262v1.789C11.476,24.525,10.821,24.588,10.181,24.588z" />
+                  <Label text="Book information">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="1.0" right="1.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="160.0" prefWidth="957.0" style="-fx-border-color: #EEEEEE;" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="160.0" prefWidth="478.5">
+                     <children>
+                        <JFXTextField fx:id="bookSearchField" labelFloat="true" maxWidth="360.0" minWidth="360.0" onKeyReleased="#searchBook" prefHeight="31.0" prefWidth="360.0" promptText="Enter book ISBN / barcode to search">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="160.0" prefWidth="478.5" spacing="10.0">
+                     <children>
+                        <Text fx:id="bookName" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Title" textAlignment="CENTER" wrappingWidth="470.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="bookAuthor" layoutX="237.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Author" textAlignment="CENTER" wrappingWidth="470.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="bookPublisher" layoutX="237.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Publisher" textAlignment="CENTER" wrappingWidth="470.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="availability" layoutX="211.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Availability">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children></VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="1.0" right="1.0" top="2.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="957.0" spacing="5.0" style="-fx-border-color: #C5CAE9; -fx-background-color: EEEEEE;">
+               <children>
+                  <SVGPath content="M20.771,12.364c0,0,0.849-3.51,0-4.699c-0.85-1.189-1.189-1.981-3.058-2.548s-1.188-0.454-2.547-0.396c-1.359,0.057-2.492,0.792-2.492,1.188c0,0-0.849,0.057-1.188,0.397c-0.34,0.34-0.906,1.924-0.906,2.321s0.283,3.058,0.566,3.624l-0.337,0.113c-0.283,3.283,1.132,3.68,1.132,3.68c0.509,3.058,1.019,1.756,1.019,2.548s-0.51,0.51-0.51,0.51s-0.452,1.245-1.584,1.698c-1.132,0.452-7.416,2.886-7.927,3.396c-0.511,0.511-0.453,2.888-0.453,2.888h26.947c0,0,0.059-2.377-0.452-2.888c-0.512-0.511-6.796-2.944-7.928-3.396c-1.132-0.453-1.584-1.698-1.584-1.698s-0.51,0.282-0.51-0.51s0.51,0.51,1.02-2.548c0,0,1.414-0.397,1.132-3.68H20.771z" />
+                  <Label text="Student information">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets left="1.0" right="1.0" top="2.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="50.0" prefHeight="160.0" prefWidth="957.0" style="-fx-border-color: #EEEEEE;" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="160.0" prefWidth="478.5">
+                     <children>
+                        <JFXTextField fx:id="studentSearchTextField" labelFloat="true" maxWidth="360.0" minWidth="360.0" onKeyPressed="#searchStudent" prefHeight="31.0" prefWidth="360.0" promptText="Enter student ID to search">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="160.0" prefWidth="478.5" spacing="10.0">
+                     <children>
+                        <Text fx:id="studentName" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="studentEmail" layoutX="237.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email Address">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="contact" layoutX="237.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="1.0" right="1.0" top="2.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="BOTTOM_CENTER" layoutX="11.0" layoutY="210.0" prefHeight="33.0" prefWidth="992.0" spacing="5.0" />
+            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="949.0" spacing="10.0">
+               <children>
+                  <JFXButton layoutX="401.0" layoutY="55.0" onAction="#cancel" prefHeight="31.0" prefWidth="167.0" text="Cancel">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="issueBook" onAction="#issueBook" prefHeight="31.0" prefWidth="167.0" text="Issue Book">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>

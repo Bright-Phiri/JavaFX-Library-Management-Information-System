@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="boarderpane" prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/allBooks.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.trackLateFeeController">
+   <top>
+      <VBox prefHeight="123.0" prefWidth="953.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane maxHeight="67.0" prefHeight="67.0" prefWidth="957.0" style="-fx-background-color: white;">
+               <right>
+                  <HBox alignment="TOP_RIGHT" prefHeight="37.0" prefWidth="127.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="minimise" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#minimize" />
+                        <Label fx:id="fullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="194.0" layoutY="10.0" onMouseClicked="#fullscreen" />
+                        <Label fx:id="unfullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="194.0" layoutY="10.0" onMouseClicked="#unfullscreen" />
+                        <Label fx:id="close" contentDisplay="GRAPHIC_ONLY" layoutX="194.0" layoutY="10.0" onMouseClicked="#close" />
+                     </children>
+                  </HBox>
+               </right>
+               <center>
+                  <Label text="Library Management System" textFill="#a1a1a1" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="23.0" />
+                     </font>
+                  </Label>
+               </center>
+            </BorderPane>
+            <VBox prefHeight="117.0" prefWidth="953.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="117.0" prefWidth="953.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="word" text="Late Fee" textFill="#2b579a">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="46.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="2.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ImageView fx:id="spinner" fitHeight="41.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/spinner.gif" />
+                           </image>
+                           <HBox.margin>
+                              <Insets bottom="15.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <JFXButton alignment="CENTER" onAction="#allRecords" prefHeight="25.0" prefWidth="125.0" style="-fx-background-radius: 0;" text="All Records">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets bottom="17.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Segoe UI Semilight" size="12.0" />
+                           </font>
+                        </JFXButton>
+                        <DatePicker fx:id="date1" onAction="#dailyReport" promptText="Late Fee Daily" style="-fx-background-color: white; -fx-border-color: #a1a1a1; -fx-background-radius: 0;">
+                           <HBox.margin>
+                              <Insets bottom="17.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                        <DatePicker fx:id="date2" layoutX="238.0" layoutY="35.0" onAction="#monthlyReport" promptText="Late FeeMonthly" style="-fx-background-color: white; -fx-border-color: #a1a1a1; -fx-background-radius: 0;">
+                           <HBox.margin>
+                              <Insets bottom="17.0" />
+                           </HBox.margin>
+                        </DatePicker>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="35.0" prefWidth="957.0" style="-fx-background-color: white;">
+                     <children>
+                        <ProgressBar fx:id="prograssBar" prefWidth="10000.0" progress="1.0" scaleY="0.4">
+                           <HBox.margin>
+                              <Insets left="3.0" right="4.0" />
+                           </HBox.margin>
+                        </ProgressBar>
+                     </children></HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="440.0" prefWidth="990.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="bookId" prefWidth="92.0" text="Book ISBN" />
+            <TableColumn fx:id="bookName" prefWidth="92.0" text="Book Name" />
+            <TableColumn fx:id="studentID" prefWidth="92.0" text="Student ID" />
+            <TableColumn fx:id="studentName" prefWidth="92.0" text="Student Name" />
+            <TableColumn fx:id="issuedDate" prefWidth="92.0" text="Issued Date / Time" />
+            <TableColumn fx:id="returnDate" prefWidth="92.0" text="Return Date / Time" />
+            <TableColumn fx:id="fee" prefWidth="92.0" text="Late Fee (MWK)" />
+            <TableColumn fx:id="issuedBy" prefWidth="92.0" text="Issued by" />
+         </columns>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox alignment="TOP_RIGHT" prefHeight="70.0" prefWidth="1000.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Fee (MWK) :">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="totalFee" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Text>
+            <Text layoutX="977.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

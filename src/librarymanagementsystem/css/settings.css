@@ -1,0 +1,53 @@
+#close:hover{
+    -fx-background-color:#F44336;
+}
+
+#fullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/fullscreen-hover.png');
+}
+
+#unfullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/unfullscreen-hover.png');
+}
+
+#minimise:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/minimize-hover.png');
+}
+
+.jfx-button:hover{
+     -fx-background-color: rgba(0,0,0,0.1);
+     -fx-border-color: transparent;
+     -fx-background-radius: 0;
+     -fx-border-style: none;
+     -fx-border-width: 0;
+}
+
+.jfx-button{
+     -fx-background-color: white;
+     -fx-background-radius: 0;
+     -fx-border-style: none;
+     -fx-border-width: 0;
+}
+
+.jfx-button:focused{
+     -fx-background-color: rgba(0,0,0,0.2);
+     -fx-background-radius: 0;
+     -fx-border-style: none;
+     -fx-border-width: 0;
+}
+
+#close:hover{
+    -fx-background-color:#F44336;
+}
+
+#fullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/fullscreen-hover.png');
+}
+
+#unfullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/unfullscreen-hover.png');
+}
+
+#minimise:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/minimize-hover.png');
+}

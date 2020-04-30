@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 5, 2017, 4:12:49 PM
+    Author     : Bright
+*/
+
+.jfx-button{
+    -fx-background-color: #2b579a;
+    -fx-text-fill: white;
+}
+
+.jfx-button:hover{
+    -fx-background-color: #219297;
+    -fx-text-fill: white;
+}
+
+.jfx-button:focused{
+    -fx-background-color: #2b579a;
+}

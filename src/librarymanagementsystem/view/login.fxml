@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="parentroot" prefHeight="327.0" prefWidth="510.0" style="-fx-background-color: #2b579a;" styleClass="mainFxmlClass" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.loginController">
+   <children>
+      <Label fx:id="welcome" layoutX="17.0" layoutY="49.0" prefHeight="57.0" prefWidth="194.0" text="Welcome">
+         <font>
+            <Font name="Segoe UI Light" size="49.0" />
+         </font>
+      </Label>
+      <Label fx:id="userLogin" layoutX="208.0" layoutY="98.0" text="User Login">
+         <font>
+            <Font name="Segoe UI Light" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="username" layoutX="35.0" layoutY="140.0" text="Username :">
+         <font>
+            <Font name="Segoe UI Light" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameTextField" layoutX="129.0" layoutY="138.0" prefHeight="30.0" prefWidth="279.0" promptText="Username">
+         <font>
+            <Font name="Segoe UI Light" size="14.0" />
+         </font>
+      </TextField>
+      <Label fx:id="password" layoutX="35.0" layoutY="179.0" text="Password  :">
+         <font>
+            <Font name="Segoe UI Light" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="close" layoutX="482.0" layoutY="15.0" onMouseClicked="#close" prefHeight="5.0" prefWidth="24.0" text="X" AnchorPane.bottomAnchor="293.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="minimize" layoutX="440.0" layoutY="-21.0" onMouseClicked="#minimize" prefHeight="57.0" prefWidth="22.0" text="-">
+         <font>
+            <Font size="55.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="login" layoutX="364.0" layoutY="216.0" onAction="#login" prefHeight="25.0" prefWidth="118.0" text="Login">
+         <font>
+            <Font name="Segoe UI Light" size="13.0" />
+         </font>
+      </JFXButton>
+      <PasswordField fx:id="passwordTextField" layoutX="129.0" layoutY="179.0" onKeyPressed="#signIn" prefHeight="25.0" prefWidth="279.0" promptText="Password">
+         <font>
+            <Font name="Segoe UI Light" size="14.0" />
+         </font>
+      </PasswordField>
+      <Label layoutX="301.0" layoutY="273.0" onMouseClicked="#loadPasswordRetrivalPanel" text="Forgot your password?" AnchorPane.rightAnchor="76.0">
+         <font>
+            <Font name="Segoe UI Light" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="286.0" layoutY="293.0" onMouseClicked="#createAccount" text="Create new account" AnchorPane.rightAnchor="76.0">
+         <font>
+            <Font name="Segoe UI Light" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

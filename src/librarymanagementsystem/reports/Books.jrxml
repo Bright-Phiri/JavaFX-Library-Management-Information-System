@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Books" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="564757ee-150a-486f-b2a3-424d8327e495">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM Book;]]>
+	</queryString>
+	<field name="BookID" class="java.lang.Object"/>
+	<field name="Name" class="java.lang.Object"/>
+	<field name="Author" class="java.lang.Object"/>
+	<field name="Publisher" class="java.lang.Object"/>
+	<field name="Edition" class="java.lang.Object"/>
+	<field name="Quantity" class="java.lang.Object"/>
+	<field name="RemainingBooks" class="java.lang.Object"/>
+	<field name="Availability" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="39757205-a95a-4de5-a17c-5c7d9f7fcd02" x="186" y="0" width="405" height="45"/>
+				<textElement>
+					<font size="26" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[BOOKS INFORMATION REPORT]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="d0be1096-c9c4-4df4-ba47-26403077b72c" x="700" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="289eed27-8b59-419b-8487-ec792312fc41" x="661" y="0" width="39" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="171d18a7-def8-46ed-9af3-b4908b4ee279" x="321" y="0" width="132" height="35"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Books Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9fd9c31e-aa05-424e-927f-cdcf80ab9ef2" x="0" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISBN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2db443e6-3aa5-4dcd-8d90-f01842fb3bb7" x="100" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="94a8416f-1cc3-447e-9969-a92ebb6a3fc4" x="200" y="0" width="133" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Author]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6981bdd6-428a-400d-9de4-d01b4bdf8b16" x="333" y="0" width="120" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Publisher]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9a0f675c-35b4-4831-a738-c723114d1595" x="702" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Availability]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f6a65fb0-0cd6-426d-a942-fcbcaf6ebd19" x="586" y="0" width="116" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remaining Books]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6df9e1e9-fd7b-44f9-ac82-171428bbb709" x="506" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6447cdc2-6814-4f07-bfa0-4df2ab6bbd41" x="453" y="0" width="43" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Edition]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement uuid="32b530d8-f936-4f49-898d-77b2c6806501" x="0" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{BookID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b9681553-b148-4d60-957c-bb87fd874134" x="100" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0e606a71-6aec-4632-95bc-171a864e2683" x="200" y="0" width="133" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Author}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6e7afa67-f2e3-4b59-814c-0259c89acb67" x="333" y="1" width="120" height="20"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Publisher}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ab9dc964-16b4-44fe-bae2-2bcac8d8ab3d" x="453" y="0" width="43" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Edition}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="626fc37c-987e-4214-ad9e-c2985c27e746" x="506" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="610e8661-af3f-4f4b-9495-589d9c58c4dc" x="586" y="1" width="116" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{RemainingBooks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e6b98a49-ffe5-4021-b885-c3d43a98a254" x="702" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Availability}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement uuid="0406c715-6480-4221-b8e8-edc1421e6251" x="681" y="34" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="587765f9-39a7-495a-a2b4-69e3dc7850fe" x="761" y="34" width="40" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

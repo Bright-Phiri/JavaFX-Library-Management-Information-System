@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/settings.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.announcementsController">
+   <top>
+      <VBox prefHeight="123.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="67.0" prefWidth="957.0">
+               <right>
+                  <HBox alignment="TOP_RIGHT" prefHeight="37.0" prefWidth="127.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="minimise" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#minimize" />
+                        <Label fx:id="fullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#fullscreen" />
+                        <Label fx:id="unfullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#unfullscreen" />
+                        <Label fx:id="close" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#close" />
+                     </children>
+                  </HBox>
+               </right>
+               <center>
+                  <Label text="Library Management System" textFill="#a1a1a1" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="23.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets top="2.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </center>
+            </BorderPane>
+            <VBox prefHeight="117.0" prefWidth="953.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox prefHeight="81.0" prefWidth="957.0" spacing="10.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label prefHeight="73.0" prefWidth="347.0" style="-fx-text-fill: #2b579a;" text="Announcement">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="46.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="35.0" prefWidth="957.0" style="-fx-background-color: #efefef;" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Send Announcement" textFill="#2b579a">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField editable="false" maxWidth="400.0" promptText="Email" style="-fx-background-radius: 0;">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="20.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="subject" layoutX="20.0" layoutY="78.0" maxWidth="400.0" style="-fx-background-radius: 0;">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="20.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextArea fx:id="message" maxWidth="400.0" prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Segoe UI Semilight" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <HBox alignment="CENTER_RIGHT" maxWidth="400.0" prefHeight="49.0" prefWidth="400.0" spacing="10.0" stylesheets="@../css/bookData.css">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <JFXButton onAction="#cancel" prefHeight="25.0" prefWidth="103.0" text="Cancel" />
+                        <JFXButton layoutX="10.0" layoutY="10.0" onAction="#sendAnnouncement" prefHeight="25.0" prefWidth="103.0" text="Send">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="68.0" prefWidth="1000.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="status" visible="false" />
+            <ProgressBar fx:id="progress" prefHeight="18.0" prefWidth="379.0" progress="0.0" visible="false" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

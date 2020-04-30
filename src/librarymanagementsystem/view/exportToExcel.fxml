@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="521.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.exportToExcelController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="1.0" style="-fx-background-color: #a1a1a1;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="100.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <VBox fx:id="vbox" prefHeight="521.0" prefWidth="332.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Create a Excel Document" textFill="#2b579a">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="18.0" prefWidth="332.0" spacing="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="10.0" stroke="#a1a1a1" strokeType="INSIDE" style="-fx-arc-height: 0;" width="10.0">
+                     <HBox.margin>
+                        <Insets left="52.0" top="4.0" />
+                     </HBox.margin>
+                  </Rectangle>
+                  <Label text="Preserves layout and formatting" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="37.0" prefHeight="18.0" prefWidth="332.0" spacing="10.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="10.0" stroke="#a1a1a1" strokeType="INSIDE" style="-fx-arc-height: 0;" width="10.0">
+                     <HBox.margin>
+                        <Insets left="52.0" top="4.0" />
+                     </HBox.margin>
+                  </Rectangle>
+                  <Label text="Content can't be easily changed" />
+               </children>
+            </HBox>
+            <JFXButton contentDisplay="TOP" onAction="#exportToExcel" prefHeight="110.0" prefWidth="95.0" style="-fx-background-color: white; -fx-border-color: black;" stylesheets="@../css/export.css" text="Create Excel">
+               <VBox.margin>
+                  <Insets left="50.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="FILE_EXCEL_ALT" size="35" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <BorderPane.margin>
+            <Insets left="30.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>

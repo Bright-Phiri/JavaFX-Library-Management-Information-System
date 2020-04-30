@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/settings.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.adminSettingsController">
+   <top>
+      <VBox prefHeight="123.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="67.0" prefWidth="957.0">
+               <right>
+                  <HBox alignment="TOP_RIGHT" prefHeight="37.0" prefWidth="127.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="minimise" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#minimize" />
+                        <Label fx:id="fullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#fullscreen" />
+                        <Label fx:id="unfullscreen" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#unfullscreen" />
+                        <Label fx:id="close" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="10.0" onMouseClicked="#close" />
+                     </children>
+                  </HBox>
+               </right>
+               <center>
+                  <Label text="Library Management System" textFill="#a1a1a1" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Segoe UI Semilight" size="23.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets top="2.0" />
+                     </BorderPane.margin>
+                  </Label>
+               </center>
+            </BorderPane>
+            <VBox prefHeight="117.0" prefWidth="953.0" style="-fx-background-color: white;">
+               <children>
+                  <HBox prefHeight="81.0" prefWidth="957.0" spacing="10.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label prefHeight="73.0" prefWidth="186.0" style="-fx-text-fill: #2b579a;" text="Settings">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="46.0" />
+                           </font>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="35.0" prefWidth="957.0" style="-fx-background-color: #efefef;" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <left>
+            <VBox prefHeight="528.0" prefWidth="302.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Settings">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="12.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <JFXButton fx:id="adminInfor" onAction="#loadAdmininfo" prefHeight="44.0" prefWidth="302.0" text="Your information">
+                     <VBox.margin>
+                        <Insets left="1.0" right="1.0" top="20.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <SVGPath content="M20.771,12.364c0,0,0.849-3.51,0-4.699c-0.85-1.189-1.189-1.981-3.058-2.548s-1.188-0.454-2.547-0.396c-1.359,0.057-2.492,0.792-2.492,1.188c0,0-0.849,0.057-1.188,0.397c-0.34,0.34-0.906,1.924-0.906,2.321s0.283,3.058,0.566,3.624l-0.337,0.113c-0.283,3.283,1.132,3.68,1.132,3.68c0.509,3.058,1.019,1.756,1.019,2.548s-0.51,0.51-0.51,0.51s-0.452,1.245-1.584,1.698c-1.132,0.452-7.416,2.886-7.927,3.396c-0.511,0.511-0.453,2.888-0.453,2.888h26.947c0,0,0.059-2.377-0.452-2.888c-0.512-0.511-6.796-2.944-7.928-3.396c-1.132-0.453-1.584-1.698-1.584-1.698s-0.51,0.282-0.51-0.51s0.51,0.51,1.02-2.548c0,0,1.414-0.397,1.132-3.68H20.771z" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="signInOptions" layoutX="10.0" layoutY="37.0" onAction="#loadSignInOptions" prefHeight="44.0" prefWidth="302.0" text="Sign-in Options">
+                     <VBox.margin>
+                        <Insets left="1.0" right="1.0" top="2.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <SVGPath content="M18.386,16.009l0.009-0.006l-0.58-0.912c1.654-2.226,1.876-5.319,0.3-7.8c-2.043-3.213-6.303-4.161-9.516-2.118c-3.212,2.042-4.163,6.302-2.12,9.517c1.528,2.402,4.3,3.537,6.944,3.102l0.424,0.669l0.206,0.045l0.779-0.447l-0.305,1.377l2.483,0.552l-0.296,1.325l1.903,0.424l-0.68,3.06l1.406,0.313l-0.424,1.906l4.135,0.918l0.758-3.392L18.386,16.009z M10.996,8.944c-0.685,0.436-1.593,0.233-2.029-0.452C8.532,7.807,8.733,6.898,9.418,6.463s1.594-0.233,2.028,0.452C11.883,7.6,11.68,8.509,10.996,8.944z" />
+                     </graphic>
+                     <padding>
+                        <Insets left="-13.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="feeButton" layoutX="11.0" layoutY="118.0" onAction="#loadChangeFeePanel" prefHeight="44.0" prefWidth="302.0" text="Change late fee per day">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CREDIT_CARD" size="20" />
+                     </graphic>
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="1.0" right="1.0" top="2.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="feeButton2" layoutX="11.0" layoutY="164.0" onAction="#loadChangeHourFeePanel" prefHeight="44.0" prefWidth="302.0" text="Change late fee per hour">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CREDIT_CARD" size="20" />
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="1.0" right="1.0" top="2.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="feeButton1" layoutX="11.0" layoutY="164.0" onAction="#loadMailServerSettingsPanel" prefHeight="44.0" prefWidth="302.0" text="Mail Server">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets right="37.0" />
+                     </padding>
+                     <graphic>
+                        <OctIconView glyphName="MAIL" size="25" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="1.0" right="1.0" top="2.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="feeButton11" layoutX="10.0" layoutY="208.0" onAction="#backupDatabase" prefHeight="44.0" prefWidth="302.0" text="Backup Database">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                     <graphic>
+                        <OctIconView glyphName="DATABASE" size="25" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets left="1.0" right="1.0" top="2.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </left>
+      </BorderPane>
+   </center>
+</BorderPane>

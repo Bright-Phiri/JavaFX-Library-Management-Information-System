@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="327.0" prefWidth="510.0" style="-fx-background-color: #2b579a;" styleClass="mainFxmlClass" stylesheets="@../css/load.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.loadController">
+   <children>
+      <ImageView fitHeight="16.0" fitWidth="179.0" layoutX="165.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/load.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="text" layoutX="-55.0" layoutY="105.0" opacity="0.46" text="Library Management System" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semilight" size="38.0" />
+         </font></Label>
+      <Label fx:id="status" layoutX="26.0" layoutY="293.0" text="Starting..." textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="close" layoutX="488.0" layoutY="14.0" onMouseClicked="#close" prefHeight="0.0" prefWidth="16.0" text="X" textFill="WHITE" AnchorPane.bottomAnchor="293.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="minimize" layoutX="448.0" layoutY="-21.0" onMouseClicked="#minimize" prefHeight="57.0" prefWidth="22.0" text="-" textFill="WHITE">
+         <font>
+            <Font size="55.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

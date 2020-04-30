@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Books" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="564757ee-150a-486f-b2a3-424d8327e495">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM User WHERE Usertype = "Librarian"]]>
+	</queryString>
+	<field name="ID" class="java.lang.Object"/>
+	<field name="Firstname" class="java.lang.Object"/>
+	<field name="Lastame" class="java.lang.Object"/>
+	<field name="Username" class="java.lang.Object"/>
+	<field name="Email" class="java.lang.Object"/>
+	<field name="Password" class="java.lang.Object"/>
+	<field name="Usertype" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="187" y="0" width="440" height="45" uuid="39757205-a95a-4de5-a17c-5c7d9f7fcd02"/>
+				<textElement>
+					<font size="26" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Librarian INFORMATION REPORT]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="700" y="0" width="100" height="20" uuid="d0be1096-c9c4-4df4-ba47-26403077b72c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="661" y="0" width="39" height="20" uuid="289eed27-8b59-419b-8487-ec792312fc41"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="307" y="0" width="159" height="35" uuid="171d18a7-def8-46ed-9af3-b4908b4ee279"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Librarian Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="160" height="20" uuid="85778f1c-fd10-45a3-bce2-2c652969f717"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Firstname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="0" width="160" height="20" uuid="439467c3-9dce-434d-a2d1-2191e976f35e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Lastame]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="160" height="20" uuid="382853cc-e5c8-46fe-ac5b-c2a5e505fd88"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Username]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="160" height="20" uuid="26617f49-fba3-44fa-8c89-b0f8e8208551"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="640" y="0" width="160" height="20" uuid="d638794d-fd1a-4471-a422-3630edb2268c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Password]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="160" height="20" uuid="01e9b3de-de61-40bf-a18a-c5f7026cb0c1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Firstname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="0" width="160" height="20" uuid="c2d3c57b-eaef-4d92-bdfb-48deaebd22de"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Lastame}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="160" height="20" uuid="159200a6-a66e-4591-ac3b-3c10fd44981b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="160" height="20" uuid="ffbb386f-9fe4-44d2-ae9b-bd7ea3f1fcd4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="0" width="160" height="20" uuid="db8b296b-f924-4462-a29a-74ee36848f9c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""+$F{Password}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="681" y="34" width="80" height="20" uuid="0406c715-6480-4221-b8e8-edc1421e6251"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="761" y="34" width="40" height="20" uuid="587765f9-39a7-495a-a2b4-69e3dc7850fe"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

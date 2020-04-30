@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 1, 2017, 3:19:47 PM
+    Author     : Bright
+*/
+.jfx-button{
+    -fx-background-color: #2b579a;
+    -fx-text-fill: white;
+    -fx-background-radius:0;
+}
+
+.jfx-button:hover{
+    -fx-background-color: #219297;
+    -fx-text-fill: white;
+}
+
+.jfx-button:focused{
+    -fx-background-color: #2b579a;
+}
+
+#close:hover{
+    -fx-background-color:#F44336;
+}
+
+#fullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/fullscreen-hover.png');
+}
+
+#unfullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/unfullscreen-hover.png');
+}
+
+#minimise:hover{ 
+    -fx-background-image:url('/librarymanagementsystem/images/minimize-hover.png');
+}
+ 

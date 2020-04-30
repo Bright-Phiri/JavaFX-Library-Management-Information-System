@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="520.0" prefWidth="692.0" stylesheets="@../css/changepassword.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.configureEmailServerController">
+   <center>
+      <VBox prefHeight="520.0" prefWidth="649.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Mail Server">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets left="4.0" top="4.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="seerverName" maxWidth="500.0" prefWidth="616.0" promptText="SMTP Host Name" style="-fx-background-radius: 0;">
+               <VBox.margin>
+                  <Insets left="30.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="serverPort" layoutX="40.0" layoutY="164.0" maxWidth="500.0" prefWidth="616.0" promptText="SMTP Server Port" style="-fx-background-radius: 0;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" top="15.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="systemEmail" layoutX="10.0" layoutY="193.0" maxWidth="500.0" prefWidth="616.0" promptText="System Email Address" style="-fx-background-radius: 0;">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" top="15.0" />
+               </VBox.margin>
+            </TextField>
+            <PasswordField fx:id="emailPassword" maxWidth="500.0" promptText="Email Password" style="-fx-background-radius: 0;">
+               <VBox.margin>
+                  <Insets left="30.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </PasswordField>
+            <HBox spacing="10.0">
+               <children>
+                  <CheckBox fx:id="authentication" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Enable Authentication ">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="tls" mnemonicParsing="false" text="Enable Transport Layer Security">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </CheckBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="649.0" spacing="18.0">
+               <children>
+                  <JFXButton fx:id="cancel" layoutX="10.0" layoutY="10.0" maxWidth="240.0" onAction="#cancelOperation" prefHeight="25.0" prefWidth="240.0" style="-fx-background-radius: 0;" text="Cancel">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin></JFXButton>
+                  <JFXButton fx:id="save" maxWidth="240.0" onAction="#saveMailServerProperties" prefHeight="25.0" prefWidth="240.0" style="-fx-background-radius: 0;" text="Save">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

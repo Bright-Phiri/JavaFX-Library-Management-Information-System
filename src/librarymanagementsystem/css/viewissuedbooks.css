@@ -1,0 +1,22 @@
+#close:hover{
+    -fx-background-color:#F44336;
+}
+
+#fullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/fullscreen-hover.png');
+}
+
+#unfullscreen:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/unfullscreen-hover.png');
+}
+
+#minimise:hover{
+    -fx-background-image:url('/librarymanagementsystem/images/minimize-hover.png');
+}
+
+.progress-bar > .track {
+     -fx-background-color: #ffffff;
+}
+.progress-bar > .bar {
+    -fx-background-color: #cacac9;
+}
