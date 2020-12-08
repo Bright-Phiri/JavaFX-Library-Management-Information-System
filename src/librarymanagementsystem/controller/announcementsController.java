@@ -246,9 +246,11 @@ public class announcementsController implements Initializable {
                         Platform.runLater(() -> {
                             if (counter == 1) {
                                 Notification notification = new Notification("Information", "Announcement sent to " + counter + " student", 3);
+                                counter = 0;
                             }
                             if (counter > 1) {
                                 Notification notification = new Notification("Information", "Announcement sent to " + counter + " students", 3);
+                                counter = 0;
                             }
                         });
                     }

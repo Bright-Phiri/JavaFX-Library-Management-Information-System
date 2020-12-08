@@ -166,6 +166,8 @@ public class viewShortTermBooksController implements Initializable {
             } catch (SQLException e) {
                 System.err.println(e);
             }
+            
+            
         }
     }
 
