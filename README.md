@@ -33,3 +33,7 @@ Library management information system (LMIS) is a computerized system that is us
 ![Screenshot (139)](https://user-images.githubusercontent.com/75673222/101638291-8c372000-3a36-11eb-8dc4-c03549aefc0e.png)
 ![Screenshot (140)](https://user-images.githubusercontent.com/75673222/101638296-8e00e380-3a36-11eb-92fd-bfe192bf3731.png)
 ![Screenshot (141)](https://user-images.githubusercontent.com/75673222/101638299-8e997a00-3a36-11eb-9e85-533276254547.png)
+![Screenshot (151)](https://user-images.githubusercontent.com/75673222/102591108-2b84a300-411a-11eb-9dee-caf6a9e8c386.png)
+![Screenshot (152)](https://user-images.githubusercontent.com/75673222/102591115-2cb5d000-411a-11eb-9d18-bf3b9d780300.png)
+![Screenshot (153)](https://user-images.githubusercontent.com/75673222/102591117-2d4e6680-411a-11eb-937e-e0d8b5f71450.png)
+
