@@ -19,16 +19,22 @@ import javafx.stage.Stage;
  * @author Bright
  */
 public class LoadStage {
-       public LoadStage(String url,Node node){
-           try {
-               Parent root = FXMLLoader.load(getClass().getResource(url));
-               Scene scene = new Scene(root);
-               Stage stage = (Stage) node.getScene().getWindow();
-               stage.setScene(scene);
-               stage.centerOnScreen();
-               stage.show();
-           } catch (IOException ex) {
-               Logger.getLogger(LoadStage.class.getName()).log(Level.SEVERE, null, ex);
-           }
-       }
+
+    public LoadStage(String url, Node node) {
+        Scene scene = null;
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(url));
+            if (url.equals("/app/view/createAccount.fxml") || url.equals("/app/view/login.fxml") || url.equals("/app/view/forgetPassword.fxml")) {
+                scene = new Scene(root);
+            } else {
+                scene = new Scene(root, 1283, 680);
+            }
+            Stage stage = (Stage) node.getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(LoadStage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
