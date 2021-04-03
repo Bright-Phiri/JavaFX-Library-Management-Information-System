@@ -24,7 +24,7 @@ public class LoadStage {
         Scene scene = null;
         try {
             Parent root = FXMLLoader.load(getClass().getResource(url));
-            if (url.equals("/app/view/createAccount.fxml") || url.equals("/app/view/login.fxml") || url.equals("/app/view/forgetPassword.fxml")) {
+            if (url.equals("/librarymanagementsystem/view/createAccount.fxml") || url.equals("/librarymanagementsystem/view/login.fxml") || url.equals("/librarymanagementsystem/view/forgetPassword.fxml")) {
                 scene = new Scene(root);
             } else {
                 scene = new Scene(root, 1283, 680);
