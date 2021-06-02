@@ -28,6 +28,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import librarymanagementsystem.model.DatabaseConnection;
 import librarymanagementsystem.model.LoadStage;
+import librarymanagementsystem.model.MailServer;
 import librarymanagementsystem.model.Notification;
 
 public class mainController implements Initializable {
@@ -74,10 +75,19 @@ public class mainController implements Initializable {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        checkLateFee(" Contact Administrator to set late fee in settings panel");
+                        checkLateFee(" Late fee not set");
                     }
                 });
                 return null;
+            }
+
+            @Override
+            protected void succeeded() {
+                if (MailServer.getMailServerInformation() == null) {
+                    Platform.runLater(() -> {
+                        Notification notification = new Notification("Information", "Mail server not configured", 3);
+                    });
+                }
             }
         };
         Thread thread = new Thread(task);

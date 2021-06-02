@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/students.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.librarianController">
+<BorderPane prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/students.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.librarianController">
    <top>
       <VBox prefHeight="123.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
          <children>
@@ -200,7 +200,7 @@
             <TableColumn fx:id="lastNameCol" prefWidth="75.0" text="Last name" />
             <TableColumn fx:id="userNameCol" prefWidth="75.0" text="Username" />
             <TableColumn fx:id="emailAddressCol" prefWidth="75.0" text="Email" />
-            <TableColumn fx:id="passwordCol" prefWidth="165.0" text="Password" />
+            <TableColumn fx:id="passwordCol" prefWidth="165.0" text="Password" visible="false" />
         </columns>
          <BorderPane.margin>
             <Insets bottom="10.0" left="4.0" top="3.0" />
