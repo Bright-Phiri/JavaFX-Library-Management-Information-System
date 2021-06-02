@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderpane" onMouseDragged="#stageDragged" onMousePressed="#stagePressed" prefHeight="651.0" prefWidth="1141.0" style="-fx-border-color: #2b579a;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.mainController">
+<BorderPane fx:id="borderpane" onMouseDragged="#stageDragged" onMousePressed="#stagePressed" prefHeight="651.0" prefWidth="1141.0" style="-fx-border-color: #2b579a;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.mainController">
    <left>
       <VBox fx:id="homeButtonsPanel" maxWidth="140.0" minWidth="140.0" prefHeight="651.0" prefWidth="140.0" stylesheets="@../css/main.css" BorderPane.alignment="CENTER">
          <children>

@@ -1,14 +1,10 @@
 package librarymanagementsystem.controller;
 
-import java.awt.AWTException;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.SystemTray;
-import java.awt.TrayIcon;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import librarymanagementsystem.model.IssuedBook;
 import java.net.URL;

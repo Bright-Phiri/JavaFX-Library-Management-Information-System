@@ -21,6 +21,8 @@ import java.util.regex.Pattern;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -71,6 +73,9 @@ public class returnBookController implements Initializable {
     @FXML
     private JFXButton renew;
 
+    viewShortTermBooksController shortTermBooksController;
+    viewIssuedBooksController issuedBooksController;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Tooltip closeApp = new Tooltip("Close");
@@ -99,11 +104,31 @@ public class returnBookController implements Initializable {
         minimise.setGraphic(new ImageView(minimizeImage));
         issuedIDInput.requestFocus();
         issueSelection.getItems().addAll(FXCollections.observableArrayList("Short Term", "Long Term"));
-        viewShortTermBooksController shortTermBooksController = new viewShortTermBooksController();
-        shortTermBooksController.updateFee();
-        viewIssuedBooksController issuedBooksController = new viewIssuedBooksController();
-        issuedBooksController.updateFee();
+        shortTermBooksController = new viewShortTermBooksController();
+        issuedBooksController = new viewIssuedBooksController();
 
+        Service<Void> service = new Service<Void>() {
+            @Override
+            protected Task<Void> createTask() {
+                return new Task<Void>() {
+                    @Override
+                    protected Void call() throws Exception {
+                        Thread.sleep(3_000);
+                        shortTermBooksController.updateFee();
+                        return null;
+                    }
+                };
+            }
+        };
+        service.setOnSucceeded((event) -> {
+            issuedBooksController.updateFee();
+        });
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                service.start();
+            }
+        });
     }
 
     @FXML
