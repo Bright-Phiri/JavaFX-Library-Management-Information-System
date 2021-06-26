@@ -48,6 +48,7 @@ import javafx.stage.Stage;
 import librarymanagementsystem.model.DatabaseConnection;
 import librarymanagementsystem.model.Notification;
 import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import javafx.stage.FileChooser;
 import librarymanagementsystem.model.Book;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -108,10 +109,15 @@ public class allBooksController implements Initializable {
     @FXML
     private OctIconView searchIcon;
     ObservableList<Book> data = FXCollections.observableArrayList();
+    ObservableList<Book> books = FXCollections.observableArrayList();
     @FXML
     private ProgressBar prograssBar;
     @FXML
     private JFXButton importData;
+    @FXML
+    private CheckBox cheakall;
+    @FXML
+    private TableColumn<Book, CheckBox> check;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -166,9 +172,20 @@ public class allBooksController implements Initializable {
         Thread thread = new Thread(task);
         thread.setDaemon(true);
         thread.start();
+        cheakall.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            books = tableView.getItems();
+            for (Book book : books) {
+                if (cheakall.isSelected()) {
+                    book.getCheck().setSelected(true);
+                } else {
+                    book.getCheck().setSelected(false);
+                }
+            }
+        });
     }
 
     private void initializaColumns() {
+        check.setCellValueFactory(new PropertyValueFactory<>("check"));
         booKID.setCellValueFactory(new PropertyValueFactory<>("bookID"));
         bookName.setCellValueFactory(new PropertyValueFactory<>("bookName"));
         bookAuthor.setCellValueFactory(new PropertyValueFactory<>("bookAuthor"));
@@ -246,7 +263,7 @@ public class allBooksController implements Initializable {
             pre = conn.prepareStatement(query);
             rs = pre.executeQuery();
             while (rs.next()) {
-                data.add(new Book(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getInt(7), rs.getString(8),rs.getString(9)));
+                data.add(new Book(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getInt(7), rs.getString(8), rs.getString(9)));
             }
             tableView.getItems().setAll(data);
         } catch (SQLException e) {

@@ -7,6 +7,7 @@ package librarymanagementsystem.model;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.CheckBox;
 
 /**
  *
@@ -14,6 +15,7 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Book {
 
+    private final CheckBox check;
     private final SimpleStringProperty bookID;
     private final SimpleStringProperty bookName;
     private final SimpleStringProperty bookAuthor;
@@ -25,6 +27,7 @@ public class Book {
     private final SimpleStringProperty bookSection;
 
     public Book(String bookID, String bookName, String bookAuthor, String bookPublisher, int bookEdition, int bookQauntity, int remainingBooks, String availability, String section) {
+        this.check = new CheckBox();
         this.bookID = new SimpleStringProperty(bookID);
         this.bookName = new SimpleStringProperty(bookName);
         this.bookAuthor = new SimpleStringProperty(bookAuthor);
@@ -34,6 +37,10 @@ public class Book {
         this.remainingBooks = new SimpleIntegerProperty(remainingBooks);
         this.availability = new SimpleStringProperty(availability);
         this.bookSection = new SimpleStringProperty(section);
+    }
+
+    public CheckBox getCheck() {
+        return check;
     }
 
     public String getBookID() {
