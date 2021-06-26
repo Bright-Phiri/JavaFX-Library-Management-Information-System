@@ -49,6 +49,7 @@ import librarymanagementsystem.model.DatabaseConnection;
 import librarymanagementsystem.model.Notification;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.SelectionMode;
 import javafx.stage.FileChooser;
 import librarymanagementsystem.model.Book;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -118,6 +119,7 @@ public class allBooksController implements Initializable {
     private CheckBox cheakall;
     @FXML
     private TableColumn<Book, CheckBox> check;
+    int selected = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -172,13 +174,22 @@ public class allBooksController implements Initializable {
         Thread thread = new Thread(task);
         thread.setDaemon(true);
         thread.start();
+
+        tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         cheakall.selectedProperty().addListener((observable, oldValue, newValue) -> {
             books = tableView.getItems();
             for (Book book : books) {
                 if (cheakall.isSelected()) {
                     book.getCheck().setSelected(true);
+                    selected++;
+                    tableView.getSelectionModel().select(book);
                 } else {
                     book.getCheck().setSelected(false);
+                    selected--;
+                    ObservableList<Integer> indices = tableView.getSelectionModel().getSelectedIndices();
+                    for (int i : indices) {
+                        tableView.getSelectionModel().clearSelection(i);
+                    }
                 }
             }
         });
@@ -550,4 +561,81 @@ public class allBooksController implements Initializable {
     private Stage getStage() {
         return (Stage) tableView.getScene().getWindow();
     }
+
+    @FXML
+    private void deleteselectedBooks(ActionEvent event) {
+        int deletedBooks = 0;
+        int borrowedBooks = 0;
+        ObservableList<Book> delete = FXCollections.observableArrayList();
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Delete books");
+        alert.setHeaderText(null);
+        alert.setContentText("Are you sure you want to delete all select records");
+        Optional<ButtonType> optional = alert.showAndWait();
+        if (optional.get().equals(ButtonType.OK)) {
+            for (Book book : data) {
+                if (book.getCheck().isSelected()) {
+                    delete.add(book);
+                    PreparedStatement pre = null;
+                    PreparedStatement pre2 = null;
+                    PreparedStatement pre3 = null;
+                    Connection conn = null;
+                    ResultSet rs = null;
+                    ResultSet rs2 = null;
+                    String query = "DELETE FROM Book WHERE BookID = ?";
+                    String query2 = "SELECT * FROM IssueBook WHERE BookID = ?";
+                    String query3 = "SELECT * FROM ShortTermBook WHERE BookID = ?";
+                    try {
+                        conn = DatabaseConnection.Connect();
+                        pre = conn.prepareStatement(query);
+                        pre2 = conn.prepareStatement(query2);
+                        pre3 = conn.prepareStatement(query3);
+                        pre2.setString(1, book.getBookID());
+                        pre3.setString(1, book.getBookID());
+                        rs = pre2.executeQuery();
+                        rs2 = pre3.executeQuery();
+                        if (rs.next() || rs2.next()) {
+                            borrowedBooks++;
+                        } else {
+                            pre.setString(1, book.getBookID());
+                            pre.executeUpdate();
+                            deletedBooks++;
+                        }
+                    } catch (SQLException ex) {
+                        System.err.println(ex);
+                    } finally {
+                        try {
+                            if (pre != null) {
+                                pre.close();
+                            }
+                            if (pre2 != null) {
+                                pre2.close();
+                            }
+                            if (pre3 != null) {
+                                pre3.close();
+                            }
+                            if (rs != null) {
+                                rs.close();
+                            }
+                            if (rs2 != null) {
+                                rs2.close();
+                            }
+                            if (conn != null) {
+                                conn.close();
+                            }
+                        } catch (SQLException ex) {
+                            System.err.println(ex);
+                        }
+                    }
+                }
+            }
+            cheakall.setSelected(false);
+            loadData();
+            allBooksAndRemainingBooks();
+            if (deletedBooks > 0) {
+                Notification notification = new Notification("Information", "Books deleted", 5);
+            }
+        }
+    }
+
 }

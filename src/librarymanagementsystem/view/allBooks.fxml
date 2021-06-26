@@ -216,7 +216,7 @@
                   <Insets top="4.0" />
                </HBox.margin>
             </CheckBox>
-            <Hyperlink text="Delete" textFill="#2b579a">
+            <Hyperlink onAction="#deleteselectedBooks" text="Delete" textFill="#2b579a">
                <graphic>
                   <FontAwesomeIconView fill="#e9594d" glyphName="TRASH" size="15" />
                </graphic>
