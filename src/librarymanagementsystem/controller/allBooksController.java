@@ -566,74 +566,87 @@ public class allBooksController implements Initializable {
     private void deleteselectedBooks(ActionEvent event) {
         int deletedBooks = 0;
         int borrowedBooks = 0;
+        int books_to_delete = 0;
         ObservableList<Book> delete = FXCollections.observableArrayList();
-        Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle("Delete books");
-        alert.setHeaderText(null);
-        alert.setContentText("Are you sure you want to delete all select records");
-        Optional<ButtonType> optional = alert.showAndWait();
-        if (optional.get().equals(ButtonType.OK)) {
-            for (Book book : data) {
-                if (book.getCheck().isSelected()) {
-                    delete.add(book);
-                    PreparedStatement pre = null;
-                    PreparedStatement pre2 = null;
-                    PreparedStatement pre3 = null;
-                    Connection conn = null;
-                    ResultSet rs = null;
-                    ResultSet rs2 = null;
-                    String query = "DELETE FROM Book WHERE BookID = ?";
-                    String query2 = "SELECT * FROM IssueBook WHERE BookID = ?";
-                    String query3 = "SELECT * FROM ShortTermBook WHERE BookID = ?";
-                    try {
-                        conn = DatabaseConnection.Connect();
-                        pre = conn.prepareStatement(query);
-                        pre2 = conn.prepareStatement(query2);
-                        pre3 = conn.prepareStatement(query3);
-                        pre2.setString(1, book.getBookID());
-                        pre3.setString(1, book.getBookID());
-                        rs = pre2.executeQuery();
-                        rs2 = pre3.executeQuery();
-                        if (rs.next() || rs2.next()) {
-                            borrowedBooks++;
-                        } else {
-                            pre.setString(1, book.getBookID());
-                            pre.executeUpdate();
-                            deletedBooks++;
-                        }
-                    } catch (SQLException ex) {
-                        System.err.println(ex);
-                    } finally {
+        for (Book book : data) {
+            if (book.getCheck().isSelected()) {
+                books_to_delete++;
+            }
+        }
+        if (books_to_delete > 0) {
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Delete books");
+            alert.setHeaderText(null);
+            alert.setContentText("Are you sure you want to delete the select records");
+            Optional<ButtonType> optional = alert.showAndWait();
+            if (optional.get().equals(ButtonType.OK)) {
+                for (Book book : data) {
+                    if (book.getCheck().isSelected()) {
+                        delete.add(book);
+                        PreparedStatement pre = null;
+                        PreparedStatement pre2 = null;
+                        PreparedStatement pre3 = null;
+                        Connection conn = null;
+                        ResultSet rs = null;
+                        ResultSet rs2 = null;
+                        String query = "DELETE FROM Book WHERE BookID = ?";
+                        String query2 = "SELECT * FROM IssueBook WHERE BookID = ?";
+                        String query3 = "SELECT * FROM ShortTermBook WHERE BookID = ?";
                         try {
-                            if (pre != null) {
-                                pre.close();
-                            }
-                            if (pre2 != null) {
-                                pre2.close();
-                            }
-                            if (pre3 != null) {
-                                pre3.close();
-                            }
-                            if (rs != null) {
-                                rs.close();
-                            }
-                            if (rs2 != null) {
-                                rs2.close();
-                            }
-                            if (conn != null) {
-                                conn.close();
+                            conn = DatabaseConnection.Connect();
+                            pre = conn.prepareStatement(query);
+                            pre2 = conn.prepareStatement(query2);
+                            pre3 = conn.prepareStatement(query3);
+                            pre2.setString(1, book.getBookID());
+                            pre3.setString(1, book.getBookID());
+                            rs = pre2.executeQuery();
+                            rs2 = pre3.executeQuery();
+                            if (rs.next() || rs2.next()) {
+                                borrowedBooks++;
+                            } else {
+                                pre.setString(1, book.getBookID());
+                                pre.executeUpdate();
+                                deletedBooks++;
                             }
                         } catch (SQLException ex) {
                             System.err.println(ex);
+                        } finally {
+                            try {
+                                if (pre != null) {
+                                    pre.close();
+                                }
+                                if (pre2 != null) {
+                                    pre2.close();
+                                }
+                                if (pre3 != null) {
+                                    pre3.close();
+                                }
+                                if (rs != null) {
+                                    rs.close();
+                                }
+                                if (rs2 != null) {
+                                    rs2.close();
+                                }
+                                if (conn != null) {
+                                    conn.close();
+                                }
+                            } catch (SQLException ex) {
+                                System.err.println(ex);
+                            }
                         }
                     }
                 }
-            }
-            cheakall.setSelected(false);
-            loadData();
-            allBooksAndRemainingBooks();
-            if (deletedBooks > 0) {
-                Notification notification = new Notification("Information", "Books deleted", 5);
+                cheakall.setSelected(false);
+                loadData();
+                allBooksAndRemainingBooks();
+                if (deletedBooks > 0) {
+                    if (deletedBooks == 1) {
+                        Notification notification = new Notification("Information", deletedBooks + " book record deleted", 5);
+                    }
+                    if (deletedBooks > 1) {
+                        Notification notification = new Notification("Information", deletedBooks + " book records deleted", 5);
+                    }
+                }
             }
         }
     }
