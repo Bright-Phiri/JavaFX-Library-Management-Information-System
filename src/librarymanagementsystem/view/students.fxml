@@ -210,6 +210,7 @@
    <center>
       <TableView fx:id="studentTable" onContextMenuRequested="#requestMenu" onKeyReleased="#fetchStudentWithKey" onMouseClicked="#fetchStudentFeesDetails" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
+            <TableColumn fx:id="check" maxWidth="1700.0" minWidth="-Infinity" prefWidth="2500.0" />
           <TableColumn fx:id="stuID" prefWidth="75.0" text="Student ID" />
             <TableColumn fx:id="stunNme" prefWidth="75.0" text="Student Name" />
             <TableColumn fx:id="stueEmail" prefWidth="75.0" text="Student Email Address" />

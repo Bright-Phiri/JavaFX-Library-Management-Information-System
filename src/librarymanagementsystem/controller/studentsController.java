@@ -118,6 +118,8 @@ public class studentsController implements Initializable {
     private MenuItem selectMenu;
     @FXML
     private CheckBox cheakall;
+    @FXML
+    private TableColumn<?, ?> check;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Tooltip closeApp = new Tooltip("Close");
