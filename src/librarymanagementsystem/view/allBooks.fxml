@@ -173,16 +173,16 @@
    <center>
       <TableView fx:id="tableView" prefHeight="523.0" prefWidth="990.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
          <columns>
-            <TableColumn fx:id="check" maxWidth="1700.0" minWidth="-Infinity" prefWidth="2500.0" />
-            <TableColumn fx:id="booKID" prefWidth="149.0" text="Book ISBN" />
-            <TableColumn fx:id="bookName" prefWidth="24.0" text="Book Title" />
-            <TableColumn fx:id="bookAuthor" prefWidth="75.0" text="Book Author" />
-            <TableColumn fx:id="bookPublisher" prefWidth="92.0" text="Book Publisher" />
-            <TableColumn fx:id="edition" prefWidth="92.0" text="Edition" />
-            <TableColumn fx:id="quantity" prefWidth="92.0" text="Quantity" />
-            <TableColumn fx:id="remainingBooks" prefWidth="92.0" text="Remaining Books" />
-            <TableColumn fx:id="sectionCol" prefWidth="75.0" text="Book Section" />
-            <TableColumn fx:id="avilability" prefWidth="92.0" text="Availability" />
+            <TableColumn fx:id="check" maxWidth="1500.0" minWidth="-1.0" prefWidth="33.0" />
+            <TableColumn fx:id="booKID" prefWidth="113.95263671875" text="Book ISBN" />
+            <TableColumn fx:id="bookName" prefWidth="141.11334228515625" text="Book Title" />
+            <TableColumn fx:id="bookAuthor" prefWidth="120.84616088867188" text="Book Author" />
+            <TableColumn fx:id="bookPublisher" prefWidth="122.32125854492188" text="Book Publisher" />
+            <TableColumn fx:id="edition" prefWidth="68.4598388671875" text="Edition" />
+            <TableColumn fx:id="quantity" prefWidth="62.04144287109375" text="Quantity" />
+            <TableColumn fx:id="remainingBooks" prefWidth="134.53460693359375" text="Remaining Books" />
+            <TableColumn fx:id="sectionCol" prefWidth="79.5841064453125" text="Book Section" />
+            <TableColumn fx:id="avilability" prefWidth="116.0" text="Availability" />
          </columns>
          <BorderPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -213,7 +213,7 @@
             </ImageView>
             <CheckBox fx:id="cheakall" mnemonicParsing="false" text="Check all">
                <HBox.margin>
-                  <Insets top="4.0" />
+                  <Insets top="5.0" />
                </HBox.margin>
             </CheckBox>
             <Hyperlink onAction="#deleteselectedBooks" text="Delete" textFill="#2b579a">

@@ -577,7 +577,7 @@ public class allBooksController implements Initializable {
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Delete books");
             alert.setHeaderText(null);
-            alert.setContentText("Are you sure you want to delete the select records");
+            alert.setContentText("Are you sure you want to delete the selected records");
             Optional<ButtonType> optional = alert.showAndWait();
             if (optional.get().equals(ButtonType.OK)) {
                 for (Book book : data) {
@@ -650,5 +650,6 @@ public class allBooksController implements Initializable {
             }
         }
     }
+
 
 }

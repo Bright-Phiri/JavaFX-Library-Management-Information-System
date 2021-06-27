@@ -37,6 +37,7 @@ import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -102,6 +103,7 @@ public class studentsController implements Initializable {
     @FXML
     private TableColumn<Student, String> stuPhone;
     ObservableList<Student> studentData = FXCollections.observableArrayList();
+    ObservableList<Student> students = FXCollections.observableArrayList();
     @FXML
     private ProgressBar progressBar;
     @FXML
@@ -120,6 +122,8 @@ public class studentsController implements Initializable {
     private CheckBox cheakall;
     @FXML
     private TableColumn<?, ?> check;
+    int selected = 0;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Tooltip closeApp = new Tooltip("Close");
@@ -186,6 +190,25 @@ public class studentsController implements Initializable {
         requestFocus(studentName);
         requestFocus(studentEmail);
         requestFocus(studentPhone);
+        studentTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        cheakall.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            students = studentTable.getItems();
+            for (Student student : students) {
+                if (cheakall.isSelected()) {
+                    student.getCheck().setSelected(true);
+                    selected++;
+                    studentTable.getSelectionModel().select(student);
+                } else {
+                    student.getCheck().setSelected(false);
+                    selected--;
+                    ObservableList<Integer> indices = studentTable.getSelectionModel().getSelectedIndices();
+                    for (int i : indices) {
+                        studentTable.getSelectionModel().clearSelection(i);
+                    }
+                }
+            }
+
+        });
     }
 
     private void clearFields() {
@@ -231,7 +254,7 @@ public class studentsController implements Initializable {
         Matcher M = p.matcher(studentEmail.getText());
         if (M.find() && M.group().equals(studentEmail.getText())) {
             return true;
-       } else {
+        } else {
             librarymanagementsystem.model.Alert alert = new librarymanagementsystem.model.Alert(Alert.AlertType.ERROR, "Email validation", "Please enter a valid email address!");
             return false;
         }
@@ -649,6 +672,7 @@ public class studentsController implements Initializable {
     }
 
     private void initiliazeColumns() {
+        check.setCellValueFactory(new PropertyValueFactory<>("check"));
         stuID.setCellValueFactory(new PropertyValueFactory<>("studentID"));
         stunNme.setCellValueFactory(new PropertyValueFactory<>("studentName"));
         stueEmail.setCellValueFactory(new PropertyValueFactory<>("studentEmail"));
@@ -888,7 +912,7 @@ public class studentsController implements Initializable {
                         preparedStatement.executeUpdate();
                         Notification notification = new Notification("Information", "Student record successfully deleted", 3);
                         cancel(new ActionEvent());
-                    } else{
+                    } else {
                         cancel(new ActionEvent());
                     }
                 }
@@ -924,5 +948,118 @@ public class studentsController implements Initializable {
 
     @FXML
     private void deleteselectedStudents(ActionEvent event) {
+        if (comboBox.getValue().equals("Archieved list")) {
+        } else {
+            int deletedStudents = 0;
+            int students_to_delete = 0;
+            ObservableList<Student> delete = FXCollections.observableArrayList();
+            for (Student student : studentData) {
+                if (student.getCheck().isSelected()) {
+                    students_to_delete++;
+                }
+            }
+            if (students_to_delete > 0) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Delete books");
+                alert.setHeaderText(null);
+                alert.setContentText("Are you sure you want to delete the selected records");
+                Optional<ButtonType> optional = alert.showAndWait();
+                if (optional.get().equals(ButtonType.OK)) {
+                    for (Student student : studentData) {
+                        if (student.getCheck().isSelected()) {
+                            delete.add(student);
+                            PreparedStatement pre = null;
+                            PreparedStatement pre2 = null;
+                            PreparedStatement pre21 = null;
+                            PreparedStatement pre3 = null;
+                            PreparedStatement pre4 = null;
+                            Connection conn = null;
+                            ResultSet rs2 = null;
+                            ResultSet rs21 = null;
+                            ResultSet rs3 = null;
+                            ResultSet rs4 = null;
+                            String query = "DELETE FROM Student WHERE studentID = ?";
+                            String query2 = "SELECT * FROM IssueBook WHERE StudentID = ?";
+                            String query21 = "SELECT * FROM ShortTermBook WHERE StudentID = ?";
+                            String query3 = "SELECT Name FROM Student WHERE StudentID = ?";
+                            String select = "SELECT * FROM Student WHERE StudentId = ?";
+                            try {
+                                conn = DatabaseConnection.Connect();
+                                pre2 = conn.prepareStatement(query2);
+                                pre21 = conn.prepareStatement(query21);
+                                pre3 = conn.prepareStatement(query3);
+                                pre4 = conn.prepareStatement(select);
+                                //insert = conn.prepareStatement(insertQuery);
+                                pre2.setString(1, student.getStudentID());
+                                pre21.setString(1, student.getStudentID());
+                                pre3.setString(1, student.getStudentID());
+                                rs2 = pre2.executeQuery();
+                                rs21 = pre21.executeQuery();
+                                if (rs2.next() || rs21.next()) {
+                                    rs3 = pre3.executeQuery();
+                                    String stuName = rs3.getString("Name");
+                                } else {
+                                    pre = conn.prepareStatement(query);
+                                    pre.setString(1, student.getStudentID());
+                                    pre.executeUpdate();
+                                    deletedStudents++;
+                                    save.setDisable(false);
+                                    update.setVisible(false);
+                                    studentID.setEditable(true);
+                                    clearFields();
+                                }
+                            } catch (SQLException ex) {
+                                System.err.println(ex);
+                            } finally {
+                                try {
+                                    if (rs21 != null) {
+                                        rs21.close();
+                                    }
+                                    if (pre != null) {
+                                        pre.close();
+                                    }
+                                    if (pre2 != null) {
+                                        pre2.close();
+                                    }
+                                    if (pre21 != null) {
+                                        pre21.close();
+                                    }
+                                    if (rs2 != null) {
+                                        rs2.close();
+                                    }
+                                    if (pre4 != null) {
+                                        pre4.close();
+                                    }
+                                    if (rs4 != null) {
+                                        rs4.close();
+                                    }
+                                    if (rs3 != null) {
+                                        rs3.close();
+                                    }
+                                    if (pre3 != null) {
+                                        pre3.close();
+                                    }
+                                    if (conn != null) {
+                                        conn.close();
+                                    }
+                                } catch (SQLException ex) {
+                                    System.err.println(ex);
+                                }
+                            }
+                        }
+                    }
+                    loadData();
+                    cheakall.setSelected(false);
+                    if (deletedStudents > 0) {
+                        if (deletedStudents == 1) {
+                            Notification notification = new Notification("Information", "Student record successfully deleted", 3);
+                        }
+                        if (deletedStudents > 1) {
+                            Notification notification = new Notification("Information", deletedStudents + " Student records successfully deleted", 3);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
