@@ -31,6 +31,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
@@ -115,6 +116,8 @@ public class studentsController implements Initializable {
     private ContextMenu selectStudentContext;
     @FXML
     private MenuItem selectMenu;
+    @FXML
+    private CheckBox cheakall;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Tooltip closeApp = new Tooltip("Close");
@@ -915,5 +918,9 @@ public class studentsController implements Initializable {
                 loadData();
             }
         }
+    }
+
+    @FXML
+    private void deleteselectedStudents(ActionEvent event) {
     }
 }
