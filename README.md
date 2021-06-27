@@ -15,7 +15,7 @@ Library management information system (LMIS) is a computerized system that is us
 - JFXTRAS - Gauges library
 - ControlsFX - UI library
 - FontawesomeFX - Icon library
-- Jasper Reports - PDF and Excel Export
+- Jasper Reports - PDF and Excel Exports
 - JavaMail API - Email Notification
 
 ## Screenshots
