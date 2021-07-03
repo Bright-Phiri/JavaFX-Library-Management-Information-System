@@ -1,5 +1,5 @@
 # JavaFX-Library-Management-Information-System
-Library management information system (LMIS) is a computerized system that is used by Libraries to collect, store, update, retrieve books and member information, calculate fines, produce reports and manage daily book transaction. Library management system could monitor the transactions of daily library operations which can improve management of library books in the library. The Library Management System enables a fully automated library service. It has the ability to display the details of the books available in the library, the transaction of books and about the book holders and it could also be used for auditing, to see if transactions are being carried out properly.
+A computerized system that for Libraries to manage books, manage students, calculate fines, produce reports and manage daily book transaction. The monitors the transactions of daily library operations which can improve management of library books in the library. The System enables a fully automated library service 
 
 ## Default Login Credentials
 | Username  | Password    |
