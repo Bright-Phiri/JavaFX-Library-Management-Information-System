@@ -1,5 +1,5 @@
 # JavaFX-Library-Management-Information-System
-A computerized system that for Libraries to manage books, manage students, calculate fines, produce reports and manage daily book transaction. The monitors the transactions of daily library operations which can improve management of library books in the library. The System enables a fully automated library service 
+A computerized system for Libraries to manage books, manage students, calculate fines, produce reports and manage daily book transaction. The monitors the transactions of daily library operations which can improve management of library books in the library. The System enables a fully automated library service 
 
 ## Default Login Credentials
 | Username  | Password    |
