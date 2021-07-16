@@ -32,7 +32,7 @@ import librarymanagementsystem.model.MailServer;
 import librarymanagementsystem.model.Notification;
 
 public class mainController implements Initializable {
-    
+
     @FXML
     private BorderPane borderpane;
     @FXML
@@ -63,7 +63,7 @@ public class mainController implements Initializable {
     public static BorderPane pane;
     @FXML
     private JFXButton clearance;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         pane = borderpane;
@@ -80,7 +80,7 @@ public class mainController implements Initializable {
                 });
                 return null;
             }
-            
+
             @Override
             protected void succeeded() {
                 if (MailServer.getMailServerInformation() == null) {
@@ -93,7 +93,7 @@ public class mainController implements Initializable {
         Thread thread = new Thread(task);
         thread.setDaemon(true);
         thread.start();
-        
+
         try {
             BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/dashBoard.fxml"));
             borderpane.setCenter(borderPane);
@@ -105,14 +105,14 @@ public class mainController implements Initializable {
             reportsFolder.mkdir();
         }
     }
-    
+
     @FXML
     private void loadSettingsPanel(ActionEvent event) throws IOException {
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/settings.fxml"));
         borderpane.setCenter(borderPane);
         booktDataEntryController.isinEditMode = false;
     }
-    
+
     @FXML
     private void closeApp(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -125,56 +125,55 @@ public class mainController implements Initializable {
             System.exit(0);
         }
     }
-    
+
     @FXML
     private void logout(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
         LoadStage stage = new LoadStage("/librarymanagementsystem/view/login.fxml", home);
     }
-    
+
     @FXML
     private void loadBooksPanel(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/allBooks.fxml"));
         borderpane.setCenter(borderPane);
-        allBooksController.hBox.setVisible(true);
     }
-    
+
     @FXML
     private void loadStudentPanel(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/students.fxml"));
         borderpane.setCenter(borderPane);
     }
-    
+
     @FXML
     private void loadIssueBooksPanel(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/issueBooks.fxml"));
         borderpane.setCenter(borderPane);
     }
-    
+
     @FXML
     private void loadReturnBooksPanel(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/returnBook.fxml"));
         borderpane.setCenter(borderPane);
     }
-    
+
     @FXML
     private void viewAllIssuedBooks(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/viewIssuedBooks.fxml"));
         borderpane.setCenter(borderPane);
     }
-    
+
     @FXML
     private void loadHomePanel(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/dashBoard.fxml"));
         borderpane.setCenter(borderPane);
     }
-    
+
     public static void checkLateFee(String message) {
         String query = "SELECT * FROM Account";
         String insertQuery = "INSERT INTO Account (LateFeePerDay,LateFeePerHour) VALUES (0.00,0.00)";
@@ -196,7 +195,7 @@ public class mainController implements Initializable {
             } else {
                 preparedStatement1.executeUpdate();
                 Notification notification = new Notification("Information", message, 5);
-                
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(mainController.class.getName()).log(Level.SEVERE, null, ex);
@@ -219,20 +218,20 @@ public class mainController implements Initializable {
             }
         }
     }
-    
+
     @FXML
     private void stageDragged(MouseEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setX(event.getScreenX() - x);
         stage.setY(event.getScreenY() - y);
     }
-    
+
     @FXML
     private void stagePressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
     }
-    
+
     @FXML
     private void loadExportDataPanel(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
@@ -240,7 +239,7 @@ public class mainController implements Initializable {
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/exportData.fxml"));
         borderpane.setCenter(borderPane);
     }
-    
+
     @FXML
     private void loadSendAnnouncementsPanel(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
@@ -248,7 +247,7 @@ public class mainController implements Initializable {
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/announcements.fxml"));
         borderpane.setCenter(borderPane);
     }
-    
+
     @FXML
     private void loadClearancePanel(ActionEvent event) throws IOException {
         booktDataEntryController.isinEditMode = false;
