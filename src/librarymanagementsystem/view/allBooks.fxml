@@ -201,7 +201,7 @@
       </TableView>
    </center>
    <bottom>
-      <HBox prefHeight="32.0" prefWidth="1000.0" spacing="5.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="controlsBox" prefHeight="32.0" prefWidth="1000.0" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="25.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
