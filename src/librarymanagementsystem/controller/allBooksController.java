@@ -50,6 +50,7 @@ import librarymanagementsystem.model.Notification;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
 import librarymanagementsystem.model.Book;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -120,9 +121,13 @@ public class allBooksController implements Initializable {
     @FXML
     private TableColumn<Book, CheckBox> check;
     int selected = 0;
+    @FXML
+    private HBox controlBox;
+    public static HBox box;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        box = controlBox;
         Tooltip closeApp = new Tooltip("Close");
         closeApp.setStyle("-fx-font-size:11");
         closeApp.setMinSize(20, 20);
@@ -250,6 +255,7 @@ public class allBooksController implements Initializable {
         disableFields();
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/bookDataEntry.fxml"));
         boarderpane.setCenter(borderPane);
+        controlBox.setVisible(false);
     }
 
     public void disableFields() {
@@ -426,6 +432,7 @@ public class allBooksController implements Initializable {
             booktDataEntryController.isinEditMode = true;
             booktDataEntryController.setEditavleBookIdFieldFalse();
             boarderpane.setCenter(root);
+            controlBox.setVisible(false);
         }
     }
 
@@ -650,6 +657,5 @@ public class allBooksController implements Initializable {
             }
         }
     }
-
 
 }
