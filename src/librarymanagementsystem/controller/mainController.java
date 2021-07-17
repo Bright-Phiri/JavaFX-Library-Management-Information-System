@@ -137,6 +137,7 @@ public class mainController implements Initializable {
         booktDataEntryController.isinEditMode = false;
         BorderPane borderPane = (BorderPane) FXMLLoader.load(getClass().getResource("/librarymanagementsystem/view/allBooks.fxml"));
         borderpane.setCenter(borderPane);
+        allBooksController.box.setVisible(true);
     }
 
     @FXML
