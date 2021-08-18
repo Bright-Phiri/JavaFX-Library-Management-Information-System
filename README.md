@@ -1,11 +1,6 @@
 # JavaFX-Library-Management-Information-System
 A computerized system for Libraries to manage books, manage students, calculate fines, produce reports and manage daily book transaction. 
 
-## Default Login Credentials
-| Username  | Password    |
-| :---      | :---        |
-| Admin     |  1004468658 |
-
 ## Libraries Used
 
 - JFoenix - JavaFX Material Design Library
