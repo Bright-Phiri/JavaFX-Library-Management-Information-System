@@ -138,7 +138,7 @@ public class loginController implements Initializable {
                 conn = DatabaseConnection.Connect();
                 pre = conn.prepareStatement(query);
                 pre.setString(1, usernameTextField.getText().trim());
-                pre.setString(2, passwordTextField.getText());
+                pre.setString(2, passwordTextField.getText().trim());
                 rs = pre.executeQuery();
                 if (rs.next()) {
                     switch (rs.getString("Usertype")) {
