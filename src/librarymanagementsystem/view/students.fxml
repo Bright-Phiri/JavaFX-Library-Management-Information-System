@@ -208,7 +208,7 @@
       </VBox>
    </right>
    <center>
-      <TableView fx:id="studentTable" onContextMenuRequested="#requestMenu" onKeyReleased="#fetchStudentWithKey" onMouseClicked="#fetchStudentFeesDetails" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+      <TableView fx:id="studentTable" onContextMenuRequested="#requestMenu" onKeyReleased="#fetchStudentWithKey" onMouseClicked="#fetchStudentFeesDetails" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 17;" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
             <TableColumn fx:id="check" maxWidth="900.0" minWidth="-Infinity" prefWidth="33.4842529296875" />
           <TableColumn fx:id="stuID" prefWidth="152.17880249023438" text="Student ID" />

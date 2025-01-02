@@ -194,7 +194,7 @@
       </VBox>
    </right>
    <center>
-      <TableView fx:id="librarianTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+      <TableView fx:id="librarianTable" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 17;" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="firstNameCol" prefWidth="75.0" text="First name" />
             <TableColumn fx:id="lastNameCol" prefWidth="75.0" text="Last name" />

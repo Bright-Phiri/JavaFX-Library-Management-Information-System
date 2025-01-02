@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/returnBook.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.clearanceController">
+<BorderPane prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/returnBook.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.clearanceController">
    <top>
       <VBox prefHeight="123.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
          <children>
@@ -80,7 +80,7 @@
                <children>
                   <VBox prefHeight="200.0" prefWidth="500.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <TableView fx:id="longTermBooksTable" prefHeight="466.0" prefWidth="500.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="longTermBooksTable" prefHeight="466.0" prefWidth="500.0" style="-fx-font-size: 17;" VBox.vgrow="ALWAYS">
                           <columns>
                             <TableColumn fx:id="lStudentName" prefWidth="75.0" text="Student Name" />
                             <TableColumn fx:id="iBookName" prefWidth="75.0" text="Book Name" />
@@ -98,7 +98,7 @@
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="500.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <TableView fx:id="shortTermBooksTable" prefHeight="466.0" prefWidth="500.0" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="shortTermBooksTable" prefHeight="466.0" prefWidth="500.0" style="-fx-font-size: 17;" VBox.vgrow="ALWAYS">
                            <columns>
                               <TableColumn fx:id="sStudentName" prefWidth="75.0" text="Student Name" />
                               <TableColumn fx:id="sBookName" prefWidth="75.0" text="Book Name" />

@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/students.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.studentsController">
+<BorderPane prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/students.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.studentsController">
    <top>
       <VBox prefHeight="123.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
          <children>
@@ -181,7 +181,7 @@
       </VBox>
    </right>
    <center>
-      <TableView fx:id="studentTable" onMouseClicked="#fetchStudentFeesDetails" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+      <TableView fx:id="studentTable" onMouseClicked="#fetchStudentFeesDetails" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 17;" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="stuID" prefWidth="75.0" text="Student ID" />
             <TableColumn fx:id="stunNme" prefWidth="75.0" text="Student Name" />

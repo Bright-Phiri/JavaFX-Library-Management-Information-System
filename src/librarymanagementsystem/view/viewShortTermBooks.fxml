@@ -5,9 +5,9 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="521.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.viewShortTermBooksController">
+<BorderPane prefHeight="521.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.viewShortTermBooksController">
    <center>
-      <TableView fx:id="issuedTable" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+      <TableView fx:id="issuedTable" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 17;" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="idCol" prefWidth="75.0" text="Issued ID" />
           <TableColumn fx:id="isbnCol" prefWidth="75.0" text="Book ISBN" />

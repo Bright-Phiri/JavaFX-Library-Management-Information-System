@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="boarderpane" prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/allBooks.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.viewIssuedBooksController">
+<BorderPane fx:id="boarderpane" prefHeight="651.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@../css/allBooks.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymanagementsystem.controller.viewIssuedBooksController">
    <top>
       <VBox prefHeight="123.0" prefWidth="953.0" BorderPane.alignment="CENTER">
          <children>
@@ -86,7 +86,7 @@
       </VBox>
    </top>
    <center>
-      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 17;" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
          <columns>
             <TableColumn fx:id="issuedID" prefWidth="92.0" text="Issued ID" />
             <TableColumn fx:id="bookID" prefWidth="92.0" text="Book ISBN" />
